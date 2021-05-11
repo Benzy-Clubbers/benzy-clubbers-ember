@@ -1,35 +1,35 @@
 <div class="container">
     <form class="needs-validation" {{action "post" @id on="submit"}}>
-        <div class="row">
-            <div class="col-md-10">
-                <div class="form-group">
+        <div class="col-md-13">
+            <div class="row">
+                <div class="form-group" class="col-md-10">
                     <label for="ControlHeaderInput" class="form-label" style="font-weight: bold;">Add a headline</label>
                     {{input value=title type="text" class="" class="form-control" id="title" placeholder="What's most important to know?" required="true"}}
                 </div>
-                <div class="form-group">
-                    <label for="ControlReviewInput" class="form-label" style="font-weight: bold;">Add a review</label>
-                    {{textarea value=review class="form-control" id="review" rows="5" placeholder="What did you like or dislike about this car?" required="true"}}
+                <div class="col-md-2">
+                    <div class="form-group" style = "background-image: none;">
+                        <label for="ControlRatingInput" class="form-label" style="font-weight: bold;">Choose Rating</label>
+                        <select class="form-control" id="rating" onchange={{action "setRating" value="target.value"}}>
+                            <option value="10">10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-2">
-                <div class="form-group" style = "background-image: none;">
-                    <label for="ControlRatingInput" class="form-label" style="font-weight: bold;">Choose Rating</label>
-                    <select class="form-control" id="rating" onchange={{action "setRating" value="target.value"}}>
-                        <option value="10">10</option>
-                        <option value="9">9</option>
-                        <option value="8">8</option>
-                        <option value="7">7</option>
-                        <option value="6">6</option>
-                        <option value="5">5</option>
-                        <option value="4">4</option>
-                        <option value="3">3</option>
-                        <option value="2">2</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
+            <div class="form-group" class="col-md-13">
+                <label for="ControlReviewInput" class="form-label" style="font-weight: bold;">Add a review</label>
+                {{textarea value=review class="form-control" id="review" rows="5" placeholder="What did you like or dislike about this car?" required="true"}}
             </div>
         </div>
-        <div class="col-12">
+        <div class="col-md-12" style="margin-top:10px;">
             <button class="btn btn-primary" type="submit">Submit Review</button>
         </div>
     </form>
