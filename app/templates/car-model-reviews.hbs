@@ -2,6 +2,11 @@
 
 <CarModelDetails @car={{car}}/>
 
+<h2 class="text-center">Add Review</h2>
+
+<ReviewForm @id={{car.id}}/>
+
+<h2 class="text-center">Reviews</h2>
 {{#each reviews as |review|}}
     <Reviews @review={{review}}/>
 {{/each}}
