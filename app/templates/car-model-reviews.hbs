@@ -1,0 +1,7 @@
+{{page-title "Model - " car.model_name}}
+
+<CarModelDetails @car={{car}}/>
+
+{{#each reviews as |review|}}
+    <Reviews @review={{review}}/>
+{{/each}}
