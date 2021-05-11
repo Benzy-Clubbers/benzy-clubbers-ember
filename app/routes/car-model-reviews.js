@@ -10,6 +10,14 @@ export default class CarModelDetailsRoute extends Route {
     console.log("Fetching reviews data.");
     const response_reviews = await fetch('http://localhost:3000/cars/reviews/model/' + model_id.id);
     const data_reviews = await response_reviews.json();
+    data_reviews.forEach(k => {
+      if (k.rating > 7)
+        k['rating_color'] = "text-success";
+      else if (k.rating > 5 && k.rating <= 7)
+        k['rating_color'] = "text-warning";
+      else if (k.rating <= 5)
+        k['rating_color'] = "text-danger";
+    });
 
     // trims and images will be added here as well
 
