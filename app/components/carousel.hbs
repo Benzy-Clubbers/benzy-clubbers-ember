@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+{{!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -23,4 +23,19 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
+</div> --}}
+<BsCarousel
+  @nextControlIcon="glyphicon glyphicon-chevron-right"
+  @nextControlLabel="Suivant"
+  @prevControlIcon="glyphicon glyphicon-chevron-left"
+  @prevControlLabel="Précédent" as |car|>
+  <car.slide>
+    <img src="https://www.mbusa.com/content/dam/mb-nafta/us/myco/my21/gla/gallery/series/gallery-class-page/2021-GLA-SUV-GAL-016-O-FI-DR.jpg" class="d-block w-100" >
+  </car.slide>
+  <car.slide>
+    <img src="https://www.mbusa.com/content/dam/mb-nafta/us/myco/my21/gla/gallery/series/gallery-class-page/2021-GLA-SUV-GAL-001-L-FE-DR.jpg" class="d-block w-100">
+  </car.slide>
+  <car.slide>
+    <img src="https://www.mbusa.com/content/dam/mb-nafta/us/myco/my21/gla/gallery/series/gallery-class-page/2021-GLA-SUV-GAL-010-D-FE-DR.jpg" class="d-block w-100">
+  </car.slide>
+</BsCarousel>
