@@ -27,7 +27,6 @@ export default class CarModelDetailsRoute extends Route {
       'http://localhost:3000/cars/images/model/' + model_id.id
     );
     const data_image = await response_image.json();
-    console.log(data_image);
 
     return Ember.RSVP.hash({
       car: data_car[0],
