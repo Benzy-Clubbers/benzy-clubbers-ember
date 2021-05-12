@@ -1,17 +1,20 @@
 {{page-title "Model - " car.model_name}}
+<div class="container" >
+    <Carousel @images={{images}}/>
 
-<CarModelDetails @car={{car}}/>
+    <CarModelDetails @car={{car}}/>
 
-<h2 class="text-center">Add Review</h2>
+    <h2 class="text-center">Add Review</h2>
 
-<ReviewForm @id={{car.id}}/>
+    <ReviewForm @id={{car.id}}/>
 
-{{#if reviews}}
-<h2 class="text-center">Reviews</h2>
-{{else}}
-<h2 class="text-center">No Reviews</h2>
-{{/if}}
+    {{#if reviews}}
+    <h2 class="text-center">Reviews</h2>
+    {{else}}
+    <h2 class="text-center">No Reviews</h2>
+    {{/if}}
 
-{{#each reviews as |review|}}
-    <Reviews @review={{review}}/>
-{{/each}}
+    {{#each reviews as |review|}}
+        <Reviews @review={{review}}/>
+    {{/each}}
+</div>
