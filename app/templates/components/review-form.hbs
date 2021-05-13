@@ -2,13 +2,24 @@
     <form class="needs-validation" {{action "post" @id on="submit"}}>
         <div class="col-md-13">
             <div class="row">
-                <div class="form-group" class="col-md-10">
+                <div class="form-group" class="col-md-6">
                     <label for="ControlHeaderInput" class="form-label" style="font-weight: bold;">Add a headline</label>
                     {{input value=title type="text" class="" class="form-control" id="title" placeholder="What's most important to know?" required="true"}}
                 </div>
+                <div class="col-md-4">
+                    <div class="form-group" style = "background-image: none;">
+                        <label for="ControlTrimInput" class="form-label" style="font-weight: bold;">Choose Trim</label>
+                        <select class="form-control" id="trim" onchange={{action "setTrim" value="target.value"}}>
+                            <option value="Trim not specified">Trim not specified</option>
+                            {{#each trims as |trim|}}
+                            <option value={{trim.trim_name}}>{{trim.trim_name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
                 <div class="col-md-2">
                     <div class="form-group" style = "background-image: none;">
-                        <label for="ControlRatingInput" class="form-label" style="font-weight: bold;">Choose Rating</label>
+                        <label for="ControlRatingInput" class="form-label" style="font-weight: bold;">Rating</label>
                         <select class="form-control" id="rating" onchange={{action "setRating" value="target.value"}}>
                             <option value="10">10</option>
                             <option value="9">9</option>

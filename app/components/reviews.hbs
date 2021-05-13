@@ -8,10 +8,11 @@
         	    </div>
         	    <div class="col-md-10">
         	        <p>
-        	            <p class="float-left"><strong>{{@review.title}}</strong></p>
+        	            <h5 class="float-left"><strong>{{@review.trim_name}}</strong></h5>
         	            <span class="float-right"><p class="text-secondary text-center">{{@review.time_formatted}}</p></span>
-
-        	       </p>
+        	       </p>	
+				   <div class="clearfix"></div>
+				   <p><h6 class="float-left"> {{@review.title}}</h6></p>
         	       <div class="clearfix"></div>
         	        <p>{{@review.review}}</p>
         	    </div>

@@ -21,17 +21,23 @@ export default class CarModelDetailsRoute extends Route {
       else if (k.rating <= 5) k['rating_color'] = 'text-danger';
     });
 
-    // trims and images will be added here as well
     console.log('Fetching image data.');
     const response_image = await fetch(
       'http://localhost:3000/cars/images/model/' + model_id.id
     );
     const data_image = await response_image.json();
 
+    console.log('Fetching trim data.');
+    const response_trim = await fetch(
+      'http://localhost:3000/cars/trims/model/' + model_id.id
+    );
+    const data_trim = await response_trim.json();
+
     return Ember.RSVP.hash({
       car: data_car[0],
       reviews: data_reviews.sort((b, a) => a.id - b.id),
       images: data_image,
+      trims: data_trim,
     });
   }
 
@@ -41,5 +47,6 @@ export default class CarModelDetailsRoute extends Route {
     Ember.set(controller, 'car', model.car);
     Ember.set(controller, 'reviews', model.reviews);
     Ember.set(controller, 'images', model.images);
+    Ember.set(controller, 'trims', model.trims);
   }
 }
