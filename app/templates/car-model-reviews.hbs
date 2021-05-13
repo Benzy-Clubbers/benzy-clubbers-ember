@@ -8,7 +8,12 @@
 
     <ReviewForm @id={{car.id}}/>
 
+    {{#if reviews}}
     <h2 class="text-center">Reviews</h2>
+    {{else}}
+    <h2 class="text-center">No Reviews</h2>
+    {{/if}}
+
     {{#each reviews as |review|}}
         <Reviews @review={{review}}/>
     {{/each}}
