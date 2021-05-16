@@ -3,3 +3,13 @@
 {{#each this.model as |car|}}
     <CarModel @car={{car}}/>
 {{/each}}
+
+<div class="container">
+    <div class="card-deck">
+        {{#each this.model as |car|}}
+            <div class="">
+                <FrontPageCard @car={{car}}/>
+            </div>
+        {{/each}}
+    </div>
+</div>
