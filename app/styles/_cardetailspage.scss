@@ -1,15 +1,11 @@
-.car-details{
-    background: linear-gradient(to top, #343a40, #1f2122);
-    //background: linear-gradient(to bottom, #343a40, #8a9194);
-    //background: linear-gradient(to bottom, #2e4957, #8a9194);
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 12px;
+.ember-application {
+  background: linear-gradient(to top, #343a40, #1f2122);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
 }
-.reviews{
-    //background: #131520
-    background:#181818;
-    //border-color: grey;
-    margin: 15px;
-    box-shadow: 0 0 20px #000;
+.reviews {
+  background: #181818;
+  margin: 15px;
+  box-shadow: 0 0 20px #000;
 }
