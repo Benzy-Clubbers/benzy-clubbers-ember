@@ -1,13 +1,8 @@
 {{page-title "Benzy Clubbers - Home Page"}}
-
-{{#each this.model as |car|}}
-    <CarModel @car={{car}}/>
-{{/each}}
-
 <div class="container" style="max-width: 70%;">
     <div class="card-deck">
         {{#each this.model as |car|}}
-            <div class="">
+            <div class="spacing">
                 <FrontPageCard @car={{car}}/>
             </div>
         {{/each}}
