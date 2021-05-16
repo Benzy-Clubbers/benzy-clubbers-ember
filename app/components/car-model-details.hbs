@@ -1,8 +1,39 @@
-<div>
-	<h4>Model Id: {{@car.id}}</h4>
-	<h4>Model Name: {{@car.model_name}}</h4>
-	<h4>Body Type: {{@car.body_type}}</h4>
-	<h4>Main Image URL: {{@car.main_img}}</h4>
-	<h4>Description: {{@car.description}}</h4>
-	<h4>Rating: {{@car.rating}}</h4>
+<div class="card mb-3" style="max-width: 100%;">
+	<div class="row g-0">
+		<div class="col-md-4">
+			<img src="{{@car.main_img}}" class="img-thumbnail" alt="Womp Womp...">
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title">{{@car.model_name}}</h5>
+				<p class="card-text"> {{@car.description}}</p>
+				<p class="card-text"><small class="text-muted">User Rating: {{@car.rating}}</small></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card trim-margin" style="width: 100%;">
+	<div class="card-body">
+		<div class="d-flex justify-content-around">
+			<h5 class="card-title">Available Trims</h5>
+		</div>
+
+		<div class="card-group ">
+
+			{{#each @trims as | trim | }}
+
+			<div class="card ">
+				<div class="card-body">
+					<h5 class="card-title ">{{trim.trim_name}}</h5>
+					<p class="card-text"><small class="text-muted">Engine: {{trim.engine_type}}<br>Start price:
+							{{trim.price}}</small></p>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+		<div class="d-flex justify-content-around btn-margin"><a href="https://www.mbusa.com/en/home"
+				class="btn btn-outline-success">Build Your Own</a>
+		</div>
+	</div>
 </div>
