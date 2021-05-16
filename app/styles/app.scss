@@ -1,2 +1,8 @@
 @import 'ember-bootstrap/bootstrap';
 @import './cardetailspage';
+@import 'ember-mdi';
+
+html,
+body {
+  min-width: 560px;
+}

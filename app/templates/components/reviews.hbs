@@ -1,0 +1,55 @@
+<div class="container" style="margin-bottom: 10px;">
+	<div class="card-body">
+		<h5 class="text-dark">Filters</h5>
+		<div class="row justify-content-between" style="grid-gap: 1.0rem;">
+			<div class="col-lg-4">
+				<select class="form-control" id="trim-filter" onchange={{action "filterByTrim" value="target.value" }}>
+					<option value="No filter">Filter by Trim</option>
+					{{#each this.trims as |trim|}}
+					<option value={{trim.trim_name}}>{{trim.trim_name}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<BsButton class="col-3 col-lg-2" @type="btn btn-outline-dark" @onClick={{action "ratingSort" }}>
+				Rating
+				<MdIcon @icon="arrow-up-down-bold" @size=20 />
+			</BsButton>
+			<BsButton class="col-3 col-lg-2" @type="btn btn-outline-dark" @onClick={{action "contentLengthSort" }}>
+				Content
+				<MdIcon @icon="arrow-up-down-bold" @size=20 />
+			</BsButton>
+				<BsButton class="col-2 col-md-2 float-right" style="box-shadow: none;" @type="btn btn-outline-dark" @onClick={{action "resetFilters" }}>
+					Reset
+				</BsButton>
+		</div>
+	</div>
+</div>
+
+{{#each this.sortedReviews as |review|}}
+<div class="container" style="margin-bottom: 10px;">
+	<div class="card reviews">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-2">
+					<p class="text-light text-center" style="font-size: 1.5rem; font-weight: bold;">Rating</p>
+					<p class="{{review.rating_color}} text-center" style="font-size: 4rem;">{{review.rating}}</p>
+				</div>
+				<div class="col-md-10">
+					<p>
+					<h5 class="float-left"><strong>{{review.trim_name}}</strong></h5>
+					<span class="float-right">
+						<p class="text-secondary text-center">{{review.time_formatted}}</p>
+					</span>
+					</p>
+					<div class="clearfix"></div>
+					<p>
+					<h6 class="float-left"> {{review.title}}</h6>
+					</p>
+					<div class="clearfix"></div>
+					<p>{{review.review}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/each}}

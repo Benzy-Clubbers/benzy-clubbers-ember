@@ -1,6 +1,6 @@
 {{page-title "Benzy Clubbers"}}
 <header>
-    <BsNavbar @type="dark" @backgroundColor="dark" @collapsed={{true}} @onCollapse={{action (mut collapsed) true}}
+    <BsNavbar @type="dark" @backgroundColor="dark" @collapsed={{true}} @onCollapse={{action (mut this.collapsed) true}}
         @onExpand={{action (mut collapsed) false}} as |navbar|>
         <div class="navbar-header">
             {{navbar.toggle}}
