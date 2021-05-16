@@ -1,8 +1,13 @@
 <LinkTo class="links" @route="car-model-reviews" @model={{@car.id}}>
     <div class="background" style="width: fit-content; border-bottom: 1px solid #E3E3E3;">
         <div style="padding: 2%">
-            <h3>{{@car.model_name}}</h3>
-            <h6>Starting at {{@car.starting_price}}</h6>
+            <h4>{{@car.model_name}}</h4>
+            {{#if (eq 'Price Coming Soon' @car.starting_price)}}
+                <h6>{{@car.starting_price}}</h6>
+            {{else}}
+                <h6>Starting at {{@car.starting_price}}</h6>
+            {{/if}}
+
         </div>
         <img src="{{@car.main_img}}" alt="{{@car.model_name}}" width="400"/>
         <h4 style="text-align: center; padding: 2%">Rating: {{@car.rating}}</h4>
