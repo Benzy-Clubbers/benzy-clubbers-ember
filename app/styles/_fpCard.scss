@@ -1,0 +1,29 @@
+.spacing {
+    padding: 1%;
+    padding-top: 2%;
+}
+
+.gridContainer {
+    display: grid;
+}
+
+.row1 {
+    grid-row: 1/2;
+}
+
+.links {
+    color: white;
+}
+
+.links:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.background {
+    //background-color: white;
+}
+
+.background:hover {
+    background-color: #E3E3E3;
+}
