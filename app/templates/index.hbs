@@ -3,7 +3,7 @@
 
 <h1 style="text-align: center; border-bottom: 1px solid #E3E3E3; padding-top: 1%; max-width: 70%; margin: auto;">SUVs</h1>
 <div class="container d-flex justify-content-center" style="max-width: 70%;">
-    <div class="card-deck justify-content-around">
+    <div class="card-deck justify-content-around fade2">
         {{#each this.model as |car|}}
             {{#if (eq car.body_type 'SUVs')}}
             <div class="spacing">
@@ -16,7 +16,7 @@
 
 <h1 style="text-align: center; border-bottom: 1px solid #E3E3E3; padding-top: 8%; max-width: 70%; margin: auto;">Sedans &amp; Wagons</h1>
 <div class="container d-flex justify-content-center" style="max-width: 70%;">
-    <div class="card-deck justify-content-around">
+    <div class="card-deck justify-content-around fade2">
         {{#each this.model as |car|}}
             {{#if (eq car.body_type 'Sedans & Wagons')}}
             <div class="spacing">
@@ -29,7 +29,7 @@
 
 <h1 style="text-align: center; border-bottom: 1px solid #E3E3E3; padding-top: 8%; max-width: 70%; margin: auto;">Coupes</h1>
 <div class="container d-flex justify-content-center" style="max-width: 70%;">
-    <div class="card-deck justify-content-around">
+    <div class="card-deck justify-content-around fade2">
         {{#each this.model as |car|}}
             {{#if (eq car.body_type 'Coupes')}}
             <div class="spacing">
