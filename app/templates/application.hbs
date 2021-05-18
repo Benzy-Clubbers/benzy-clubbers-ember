@@ -1,17 +1,17 @@
 {{page-title "Benzy Clubbers"}}
 <header>
-  <BsNavbar @type="dark" @backgroundColor="dark" @collapsed={{true}} @onCollapse={{action (mut collapsed) true}}
-    @onExpand={{action (mut collapsed) false}} as |navbar|>
+  <BsNavbar @type="dark" @backgroundColor="dark" as |navbar|>
     <div class="navbar-header">
-      {{#link-to "index" class="navbar-brand"}}<img
-        src="https://www.nicepng.com/png/full/136-1363418_mercedes-benz-png-logo-mercedes-logo-mercedes-zeichen.png"
-        class="mainLogo" alt="Mercedes-Benz"> {{/link-to}}
+      {{#link-to "index" class="navbar-brand"}}<img src="https://i.imgur.com/Wiq7iFc.png" class="mainLogo"
+        alt="Mercedes-Benz"> {{/link-to}}
     </div>
-    <div class="mx-auto display-5">
-      <p style="color:white;">
-        Benzy Clubbers Forum
-      </p>
-    </div>
+    <navbar.content>
+    </navbar.content>
+    <navbar.nav as |nav|>
+      <nav.item>
+        <a href="https://www.mbusa.com/en/home" style="text-decoration: none; color:white;">Visit Official Mercedes-Benz Website</a>
+      </nav.item>
+    </navbar.nav>
   </BsNavbar>
 </header>
 
