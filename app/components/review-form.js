@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from 'benzy-clubbers-ember/config/environment';
 
 export default Ember.Component.extend({
   actions: {
@@ -11,7 +12,7 @@ export default Ember.Component.extend({
     post: function (id) {
       return $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/cars/review/model/' + id,
+        url: ENV.APP.API_HOST + '/cars/review/model/' + id,
         data: {
           review: this.get('review'),
           title: this.get('title'),
