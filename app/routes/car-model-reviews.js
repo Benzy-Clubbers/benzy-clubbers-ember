@@ -1,17 +1,16 @@
 import Route from '@ember/routing/route';
 import Ember from 'ember';
+import ENV from 'benzy-clubbers-ember/config/environment';
 
 export default class CarModelDetailsRoute extends Route {
   async model(model_id) {
     console.log('Fetching model data.');
-    const response_car = await fetch(
-      'http://localhost:3000/cars/model/' + model_id.id
+    const response_car = await fetch(ENV.APP.API_HOST + '/cars/model/' + model_id.id
     );
     const data_car = await response_car.json();
 
     console.log('Fetching reviews data.');
-    const response_reviews = await fetch(
-      'http://localhost:3000/cars/reviews/model/' + model_id.id
+    const response_reviews = await fetch(ENV.APP.API_HOST + '/cars/reviews/model/' + model_id.id
     );
     const data_reviews = await response_reviews.json();
     data_reviews.forEach((k) => {
@@ -22,14 +21,12 @@ export default class CarModelDetailsRoute extends Route {
     });
 
     console.log('Fetching image data.');
-    const response_image = await fetch(
-      'http://localhost:3000/cars/images/model/' + model_id.id
+    const response_image = await fetch(ENV.APP.API_HOST + '/cars/images/model/' + model_id.id
     );
     const data_image = await response_image.json();
 
     console.log('Fetching trim data.');
-    const response_trim = await fetch(
-      'http://localhost:3000/cars/trims/model/' + model_id.id
+    const response_trim = await fetch(ENV.APP.API_HOST + '/cars/trims/model/' + model_id.id
     );
     const data_trim = await response_trim.json();
 
