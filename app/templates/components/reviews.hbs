@@ -1,6 +1,6 @@
 <div class="container" style="margin-bottom: 10px;">
 	<div class="card-body">
-		<h5 class="text-white">Filters</h5>
+		<h5 class="text-dark">Filters</h5>
 		<div class="row justify-content-between" style="grid-gap: 1.0rem;">
 			<div class="col-lg-4">
 				<select class="form-control" id="trim-filter" onchange={{action "filterByTrim" value="target.value" }}>
@@ -10,15 +10,15 @@
 					{{/each}}
 				</select>
 			</div>
-			<BsButton class="col-3 col-lg-2" @type="btn btn-outline-light text-white" @onClick={{action "ratingSort" }}>
+			<BsButton class="col-3 col-lg-2" @type="btn btn-outline-dark" @onClick={{action "ratingSort" }}>
 				Rating
 				<MdIcon @icon="arrow-up-down-bold" @size=20 />
 			</BsButton>
-			<BsButton class="col-3 col-lg-2" @type="btn btn-outline-light text-white" @onClick={{action "contentLengthSort" }}>
+			<BsButton class="col-3 col-lg-2" @type="btn btn-outline-dark" @onClick={{action "contentLengthSort" }}>
 				Content
 				<MdIcon @icon="arrow-up-down-bold" @size=20 />
 			</BsButton>
-				<BsButton class="col-2 col-md-2 float-right text-white" style="box-shadow: none;" @type="btn btn-outline-light" @onClick={{action "resetFilters" }}>
+				<BsButton class="col-2 col-md-2 float-right" style="box-shadow: none;" @type="btn btn-outline-dark" @onClick={{action "resetFilters" }}>
 					Reset
 				</BsButton>
 		</div>

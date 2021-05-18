@@ -1,20 +1,26 @@
 {{page-title "Benzy Clubbers"}}
 <header>
-  <BsNavbar @type="dark" @backgroundColor="dark" @collapsed={{true}} @onCollapse={{action (mut this.collapsed) true}}
-        @onExpand={{action (mut collapsed) false}} as |navbar|>
-        <div class="navbar-header">
-            {{navbar.toggle}}
-            {{#link-to "index" class="navbar-brand"}}<img src="https://www.nicepng.com/png/full/136-1363418_mercedes-benz-png-logo-mercedes-logo-mercedes-zeichen.png" class="mainLogo" alt="Mercedes-Benz"> {{/link-to}}
-        </div>
-    </BsNavbar>
+  <BsNavbar @type="dark" @backgroundColor="dark" @collapsed={{true}} @onCollapse={{action (mut collapsed) true}}
+    @onExpand={{action (mut collapsed) false}} as |navbar|>
+    <div class="navbar-header">
+      {{#link-to "index" class="navbar-brand"}}<img
+        src="https://www.nicepng.com/png/full/136-1363418_mercedes-benz-png-logo-mercedes-logo-mercedes-zeichen.png"
+        class="mainLogo" alt="Mercedes-Benz"> {{/link-to}}
+    </div>
+    <div class="mx-auto display-5">
+      <p style="color:white;">
+        Benzy Clubbers Forum
+      </p>
+    </div>
+  </BsNavbar>
 </header>
 
-<main class="car-details">
-    {{outlet}}
+<main class="car-details mb-5">
+  {{outlet}}
 </main>
 
-<footer class="page-footer font-small bg-dark text-white">
-  <div class="text-center my-5">© 2021 Copyright:
+<footer class="page-footer font-small bg-dark text-white py-3 mt-5">
+  <div class="text-center">© 2021 Copyright:
     <a href="https://github.com/Benzy-Clubbers"> Benzy Clubbers Team</a>
   </div>
 </footer>

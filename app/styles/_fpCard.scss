@@ -12,7 +12,12 @@
 }
 
 .links {
-    color: white;
+    color: black;
+}
+
+.main-image {
+    transform: scale(1.0);
+    transition: 0.3s all;
 }
 
 .links:hover {
@@ -20,10 +25,7 @@
     color: black;
 }
 
-.background {
-    //background-color: white;
-}
-
-.background:hover {
-    background-color: #E3E3E3;
+.links:hover .main-image {
+    transform: scale(1.25);
+    transition: 0.5s all;
 }

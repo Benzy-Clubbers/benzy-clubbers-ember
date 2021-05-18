@@ -1,7 +1,9 @@
 {{page-title "Benzy Clubbers - Home Page"}}
 
 
-<h1 style="text-align: center; border-bottom: 1px solid #E3E3E3; padding-top: 1%; max-width: 70%; margin: auto;">SUVs</h1>
+<h1 style="text-align: center; color: rgb(231, 231, 231); font-weight: bold; border-bottom: 1px solid #E3E3E3; padding-top: 1%; padding-bottom: 2%; max-width: 90%; margin: auto;">2021 Mercedes-Benz Lineup</h1>
+
+<h1 style="text-align: center; border-bottom: 1px solid gray; padding-top: 1%; max-width: 70%; margin: auto;">SUVs</h1>
 <div class="container d-flex justify-content-center" style="max-width: 70%;">
     <div class="card-deck justify-content-around fade2">
         {{#each this.model as |car|}}
@@ -14,7 +16,7 @@
     </div>
 </div>
 
-<h1 style="text-align: center; border-bottom: 1px solid #E3E3E3; padding-top: 8%; max-width: 70%; margin: auto;">Sedans &amp; Wagons</h1>
+<h1 style="text-align: center; border-bottom: 1px solid gray; padding-top: 3%; max-width: 70%; margin: auto;">Sedans &amp; Wagons</h1>
 <div class="container d-flex justify-content-center" style="max-width: 70%;">
     <div class="card-deck justify-content-around fade2">
         {{#each this.model as |car|}}
@@ -27,7 +29,7 @@
     </div>
 </div>
 
-<h1 style="text-align: center; border-bottom: 1px solid #E3E3E3; padding-top: 8%; max-width: 70%; margin: auto;">Coupes</h1>
+<h1 style="text-align: center; border-bottom: 1px solid gray; padding-top: 3%; max-width: 70%; margin: auto;">Coupes</h1>
 <div class="container d-flex justify-content-center" style="max-width: 70%;">
     <div class="card-deck justify-content-around fade2">
         {{#each this.model as |car|}}
@@ -40,8 +42,8 @@
     </div>
 </div>
 
-<h1 style="text-align: center; border-bottom: 1px solid #E3E3E3; padding-top: 8%; max-width: 70%; margin: auto;">Convertibles &amp; Roadsters</h1>
-<div class="container d-flex justify-content-center" style="max-width: 70%;">
+<h1 style="text-align: center; border-bottom: 1px solid gray; padding-top: 3%; max-width: 70%; margin: auto;">Convertibles &amp; Roadsters</h1>
+<div class="container d-flex justify-content-center; padding-bottom: 3%; " style="max-width: 70%;">
     <div class="card-deck justify-content-around">
         {{#each this.model as |car|}}
             {{#if (eq car.body_type 'Convertibles & Roadsters')}}

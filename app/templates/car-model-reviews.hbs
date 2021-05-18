@@ -11,9 +11,9 @@
 
     {{#if this.reviews}}
     <h2 class="text-center">Reviews</h2>
+    <Reviews @reviews={{this.reviews}} @trims={{this.trims}}/>
     {{else}}
     <h2 class="text-center">No Reviews</h2>
     {{/if}}
-
-    <Reviews @reviews={{this.reviews}} @trims={{this.trims}}/>
+    
 </div>
