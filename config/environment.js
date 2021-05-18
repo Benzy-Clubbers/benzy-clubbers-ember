@@ -43,7 +43,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.API_HOST = 'BACKEND_HOST';
+    ENV.APP.API_HOST = process.env.HOST;
   }
 
   return ENV;
