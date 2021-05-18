@@ -4,6 +4,11 @@ import config from 'benzy-clubbers-ember/config/environment';
 export default class Router extends EmberRouter {
   location = config.locationType;
   rootURL = config.rootURL;
+  // Overrides didTransition method: fixes a bug when page stays scrolled down after changing the route
+  didTransition() {
+    this._super(...arguments);
+    window.scrollTo(0, 0);
+  }  
 }
 
 Router.map(function () {
