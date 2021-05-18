@@ -74,5 +74,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "bad-words": "^3.0.4"
   }
 }
