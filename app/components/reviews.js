@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // 'reviews' is a list of objects passed to the component
-  //  will by default be unfiltered ("return true")
+  // 'reviews' is a list of objects passed to the component. 
+  // Filter by Trim is always applied to 'reviews'
+  // Filter by Trim is unfiltered by default ("return true") 
   filteredReviews: Ember.computed
     .filter('reviews', function (review) {
       if (this.get('trimFilter') == null || this.get('trimFilter') == 'No filter') {
@@ -11,15 +12,15 @@ export default Ember.Component.extend({
       return review.trim_name == this.get('trimFilter');
     })
     .property('trimFilter'),
-  // applied sort to filtered/unfiltered list of reviews
+  // Applied sort to filtered/unfiltered list of reviews
   sortedReviews: Ember.computed.sort('filteredReviews', 'sortDefinition'),
-  // initialize booleans
+  // Initialize booleans
   trimFilter: null,
   sortByRating: false,
   sortByContentLength: false,
   sortRatingDirection: false,
   sortContentLengthDirection: false,
-  // will apply sort based on boolean states
+  // Will apply sort based on the boolean states
   sortDefinition: Ember.computed('rating', 'sortRatingDirection', 'review', 'sortContentLengthDirection', function () {
     let sortRatingOrder = this.get('sortRatingDirection') ? 'desc' : 'asc';
     let sortContentLengthOrder = this.get('sortContentLengthDirection') ? 'desc' : 'asc';
@@ -27,11 +28,12 @@ export default Ember.Component.extend({
             this.get('sortByContentLength') ? `review.length:${sortContentLengthOrder}` : '' ];
   }),
 
+  // resetFilters will reset the filter and any sort applied
+  // There can only be applied one sort. Thus, after applying ratingSort, it will cancel contentSort, and reverse
   actions: {
     filterByTrim: function (selected) {
       this.set('trimFilter', selected);
     },
-    // will filter and any sort applied
     resetFilters() {
       this.set('trimFilter', null);
       this.set('sortByRating', false);
@@ -40,7 +42,6 @@ export default Ember.Component.extend({
       this.set('sortContentLengthDirection', null);
       document.getElementById('trim-filter').selectedIndex = 0;
     },
-    // can only be applied one sort
     ratingSort() {
       this.set('sortByRating', true);
       this.set('sortByContentLength', false);
