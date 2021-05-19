@@ -11,6 +11,7 @@ export default class Router extends EmberRouter {
   }  
 }
 
+// 'car-modle-reviews' is associated with path 'benzy-clubbers.netlify.app/model/:id'
 Router.map(function () {
   this.route('car-model-reviews', { path: '/model/:id' });
 });

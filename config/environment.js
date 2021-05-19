@@ -43,6 +43,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    // HOST was taken from .env file and stored in process.env through 'dotenv' package
     ENV.APP.API_HOST = process.env.HOST;
   }
 
